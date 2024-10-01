@@ -37,5 +37,7 @@ internal sealed class ApartmenetConfiguration : IEntityTypeConfiguration<Apartme
               .HasConversion(currency => currency.Code, code => Currency.FromCode(code));
         });
 
+        builder.Property<uint>("Version").IsRowVersion();
+
     }
 }
